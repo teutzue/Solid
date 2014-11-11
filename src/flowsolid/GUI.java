@@ -18,6 +18,7 @@ public class GUI extends javax.swing.JFrame {
 
     public GUI() {
         initComponents();
+        control = new Control();
 
     }
 
@@ -179,7 +180,7 @@ public class GUI extends javax.swing.JFrame {
          * Pre: Post: A new word pair is added to the existing collection of
          * word pairs. This method does not save to file!
          */
-        control.add(null, null);
+        control.add(jTextQuestion.getText(),jTextAnswer.getText());
     }//GEN-LAST:event_jButtonNewActionPerformed
 
     private void jButtonLookUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLookUpActionPerformed
