@@ -1,11 +1,19 @@
 package flowsolid;
 
 public class Control implements WordPairControlInterface{
-        
+    
+    /**
+     * Pre: Post: A new word pair is added to the existing collection of word
+     * pairs. This method does not save to file!
+     */
     @Override
     public void add(String question, String answer){
         
     }
+    /**
+     * Pre: Post: Returns the number of wordpairs in the collection (not the
+     * file).
+     */
     @Override
     public int size(){
         return 0;

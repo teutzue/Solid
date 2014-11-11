@@ -14,8 +14,11 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Creates new form GUI
      */
+    WordPairControlInterface control;
+
     public GUI() {
         initComponents();
+
     }
 
     /**
@@ -46,13 +49,45 @@ public class GUI extends javax.swing.JFrame {
 
         jLabelAnswer.setText("Answer");
 
+        jTextQuestion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextQuestionActionPerformed(evt);
+            }
+        });
+
+        jTextAnswer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextAnswerActionPerformed(evt);
+            }
+        });
+
         jButtonNext.setText("Next");
+        jButtonNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNextActionPerformed(evt);
+            }
+        });
 
         jButtonGuess.setText("Guess");
+        jButtonGuess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGuessActionPerformed(evt);
+            }
+        });
 
         jButtonNew.setText("New");
+        jButtonNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNewActionPerformed(evt);
+            }
+        });
 
         jButtonLookUp.setText("Look Up");
+        jButtonLookUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLookUpActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,6 +146,38 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextQuestionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextQuestionActionPerformed
+
+    private void jTextAnswerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextAnswerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextAnswerActionPerformed
+
+    private void jButtonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonNextActionPerformed
+
+    private void jButtonGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuessActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jButtonGuessActionPerformed
+
+    private void jButtonNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewActionPerformed
+        // TODO add your handling code here:
+        /**
+         * Pre: Post: A new word pair is added to the existing collection of
+         * word pairs. This method does not save to file!
+         */
+        control.add(null, null);
+    }//GEN-LAST:event_jButtonNewActionPerformed
+
+    private void jButtonLookUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLookUpActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_jButtonLookUpActionPerformed
 
     /**
      * @param args the command line arguments
