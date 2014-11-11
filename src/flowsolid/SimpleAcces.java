@@ -14,7 +14,7 @@ public class SimpleAcces {
 
     public void read() throws FileNotFoundException {
         // File class gives acces to a file, add then the file in the paranthersis
-        File mini = new File("tiny.txt");
+        File mini = new File("filenme.txt");
         //Scanner scan = new Scanner(userPicker());
         
         
@@ -30,7 +30,7 @@ public class SimpleAcces {
     }
     public void write() throws IOException{
         /* the file class gives acces to a file */
-        File mini = new File("tiny.txt");
+        File mini = new File("filename.txt");
 //        PrintWriter pWriter = new PrintWriter(mini);// equivalt of scanner class but for writing files
 //        
 //        pWriter.append("Teo is king\n");

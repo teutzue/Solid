@@ -156,16 +156,25 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextAnswerActionPerformed
 
     private void jButtonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextActionPerformed
-        // TODO add your handling code here:
+
+        /**
+         * Pre: At least one word pair must be present Post: Returns a question
+         * randomly selected from the collection of word pairs.
+         */
+        control.getRandomQuestion();
     }//GEN-LAST:event_jButtonNextActionPerformed
 
     private void jButtonGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuessActionPerformed
-        // TODO add your handling code here:
+        /**
+         * Pre: Post: Returns true if (question, quess) exists as a word pair in
+         * the collection, otherwise false.
+         */
+        control.checkGuess(null, null);
 
     }//GEN-LAST:event_jButtonGuessActionPerformed
 
     private void jButtonNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewActionPerformed
-        // TODO add your handling code here:
+
         /**
          * Pre: Post: A new word pair is added to the existing collection of
          * word pairs. This method does not save to file!
@@ -174,9 +183,12 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonNewActionPerformed
 
     private void jButtonLookUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLookUpActionPerformed
-        // TODO add your handling code here:
-        
-        
+        /**
+         * Pre: Post: Returns the answer corresponding to the question if this
+         * exists in the collection. Otherwise it returns null.
+         */
+        control.lookup(null);
+
     }//GEN-LAST:event_jButtonLookUpActionPerformed
 
     /**
