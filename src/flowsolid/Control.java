@@ -1,14 +1,16 @@
 package flowsolid;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Scanner;
 
 public class Control implements WordPairControlInterface {
 
-    ArrayList<WordPair> wordList = new ArrayList();
+    public static ArrayList<WordPair> wordList = new ArrayList();
 
     /**
      * Pre: Post: A new word pair is added to the existing collection of word
@@ -39,16 +41,30 @@ public class Control implements WordPairControlInterface {
         Random r = new Random();
         int number = r.nextInt(wordList.size());
         return wordList.get(number).getQuestion();
-
     }
 
     /**
      * Pre: Post: Returns true if (question, quess) exists as a word pair in the
      * collection, otherwise false.
+     *
+     * @param question
      */
     @Override
-    public boolean checkGuess(String question, String quess) {
-        return true;
+    public boolean checkGuess(String question, String guess) {
+        String answer = null;
+        for (WordPair item : wordList) {
+            if (item.question.equalsIgnoreCase(question)) {
+                answer = item.answer;
+            }
+
+        }
+        if (guess.equalsIgnoreCase(answer)) {
+            return true;
+        } else {
+
+            return false;
+        }
+        // return (guess.equalsIgnoreCase(answer)
     }
 
     /**
@@ -57,7 +73,14 @@ public class Control implements WordPairControlInterface {
      */
     @Override
     public String lookup(String question) {
-        return "";
+
+        for (WordPair item : wordList) {
+            if (item.question.equalsIgnoreCase(question)) {
+                return item.answer;
+            }
+
+        }
+        return null;
     }
 
     /**
@@ -66,9 +89,24 @@ public class Control implements WordPairControlInterface {
      * returns false.
      */
     @Override
-    public boolean load(String filename) {
+    public boolean load(String filename) throws FileNotFoundException {
+        try {
 
-        return true;
+            File mini = new File(filename);
+            Scanner scan = new Scanner(mini);
+            scan.useDelimiter(",|\n");
+
+            while (scan.hasNext()) {// as long there is still a next line 
+
+                wordList.add(new WordPair(scan.next(), scan.next()));
+
+            }
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+
     }
 
     /**
@@ -79,13 +117,21 @@ public class Control implements WordPairControlInterface {
     public boolean save(String filename) {
 
         try {
-            FileHandler fWrite = new FileHandler();
-            fWrite.write();
+
+            File mini = new File(filename);
+            FileWriter fWrite = new FileWriter(mini, true);
+            for (WordPair item : wordList) {
+
+                fWrite.append(item.question + "," + item.answer + "\n");
+
+            }
+            fWrite.close();// close acces to file 
+            return true;
 
         } catch (IOException ex) {
-            Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
-        return true;
+
     }
 
     /**
@@ -93,6 +139,7 @@ public class Control implements WordPairControlInterface {
      */
     @Override
     public void clear() {
-
+        wordList.clear();
     }
+
 }

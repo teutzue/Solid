@@ -1,5 +1,7 @@
 package flowsolid;
 
+import java.io.FileNotFoundException;
+
 
 public interface WordPairControlInterface {
 
@@ -38,7 +40,7 @@ public interface WordPairControlInterface {
      * collection of word pairs. Returns true if successfully done. Otherwise it
      * returns false.
      */
-    boolean load(String filename);
+    boolean load(String filename) throws FileNotFoundException;
 
     /**
      * Pre: Post: All word pairs from the collection has been written to the

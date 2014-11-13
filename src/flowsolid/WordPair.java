@@ -13,7 +13,6 @@ public class WordPair {
     
     this.question = question;
     this.answer = answer;
-    
     }
 
     public String getQuestion() {
